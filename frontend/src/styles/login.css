@@ -1,0 +1,191 @@
+:root {
+    --accent-primary: #8e44ad;
+    --accent-secondary: #9b59b6;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background-color: var(--bg-primary);
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .auth-container h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .auth-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+  }
+  
+  .auth-container form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-container form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  }
+  
+  .auth-container input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-tertiary);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+  }
+  
+  .auth-container input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+  
+  .auth-container input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.2);
+  }
+  
+  .auth-container button {
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .auth-container button:hover {
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  .error {
+    color: var(--danger);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: rgba(231, 76, 60, 0.15);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    animation: shake 0.4s ease-in-out;
+  }
+  
+  .auth-container p {
+    color: var(--text-secondary);
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .auth-container a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-container a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+  }
+  
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-icon {
+    color: var(--accent-primary);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .auth-container form {
+      padding: 1.5rem;
+    }
+    
+    .auth-container h2 {
+      font-size: 1.75rem;
+    }
+    
+    .auth-container input {
+      padding: 0.85rem 1rem;
+    }
+    
+    .auth-container button {
+      padding: 0.85rem 1.25rem;
+    }
+  }

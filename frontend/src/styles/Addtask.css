@@ -1,0 +1,264 @@
+.add-task-page {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.add-task-container {
+  max-width: 500px;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-task-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.back-button {
+  background-color: var(--bg-tertiary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  margin-right: 0.75rem;
+}
+
+.back-button:hover {
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.task-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-tertiary);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.task-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.task-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.2);
+}
+
+.clear-input {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.clear-input:hover {
+  opacity: 1;
+  color: var(--danger);
+}
+
+.clear-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+  animation: shake 0.4s ease-in-out;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.cancel-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: var(--danger);
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.submit-button:hover {
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+  transform: translateY(-2px);
+}
+
+.submit-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive adjustments */
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .add-task-container {
+    padding: 1.25rem;
+  }
+  
+  .form-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+  }
+  
+  .task-form {
+    gap: 1.5rem;
+  }
+  
+  .task-input {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .back-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .back-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .form-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .submit-button, .cancel-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    justify-content: center;
+  }
+  
+  .submit-button {
+    order: -1;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .add-task-container {
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .task-input:focus {
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.3);
+  }
+  
+  .error-message {
+    background-color: rgba(231, 76, 60, 0.15);
+  }
+}
+  
