@@ -23,6 +23,9 @@ app.use(cors({
     origin : [process.env.CLIENT_URL],
     methods : ['GET','POST','PUT','DELETE','PATCH']
 }));
+
+app.options('*', cors());
+
 const PORT = process.env.PORT
 
 app.get('/' , (req,res)=>{
